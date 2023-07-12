@@ -1,0 +1,5 @@
+1. Write an SQL query to find the second-highest salary from an "Employees" table.
+
+Ans: with cte as ( select * , dense_rank() over (partition by salary order by salary ASC) rk from Employees )
+    
+     select * from cte where rk = 2 
